@@ -107,4 +107,5 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
     cd ../
     cp misc/nginx-default.conf /etc/nginx/sites-available/default
     systemctl enable nginx.service && systemctl stop nginx.service && systemctl start nginx.service
-    screen -S pool /pool/ethereum-pool/build/bin/ethereum-pool config_api.json
+    cd /pool/ethereum-pool
+    screen -S pool ./build/bin/ethereum-pool config_api.json
