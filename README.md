@@ -35,7 +35,7 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
     vim /pool/start_geth.sh
 
     #!/bin/bash
-    screen -S server geth --classic --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
+    screen -S server geth --classic --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "0x6efc4688f0583b42da4d0aa4c4eb520313a9db2b" --cache=12288 --mine --unlock "0x6efc4688f0583b42da4d0aa4c4eb520313a9db2b" --allow-insecure-unlock --password /pool/pwd
 
 创建账户密码文件并给启动文件赋权限：
 
@@ -52,8 +52,8 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
     sudo su
     cd /pool
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/kankan1987/ethereum-pool.git
-    cd open-ethereum-pool
+    git clone https://github.com/huykent/ethereum-pool.git
+    cd ethereum-pool
     chmod +x ./build/env.sh
     add-apt-repository ppa:longsleep/golang-backports
     apt update
@@ -107,4 +107,4 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
     cd ../
     cp misc/nginx-default.conf /etc/nginx/sites-available/default
     systemctl enable nginx.service && systemctl stop nginx.service && systemctl start nginx.service
-    screen -S pool ./build/bin/ethash-mining-pool config_api.json
+    screen -S pool ./build/bin/ethereum-pool config_api.json
