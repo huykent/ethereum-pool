@@ -22,8 +22,8 @@
     ln -s /pool/geth /usr/bin/geth
     chmod ugo+x /usr/bin/geth
 
-    geth --classic account new
-    geth --classic account list
+    geth account new
+    geth account list
 
 生成的账户信息如下:
 
@@ -35,7 +35,7 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
     vim /pool/start_geth.sh
 
     #!/bin/bash
-    screen -S server geth --classic --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "0x6efc4688f0583b42da4d0aa4c4eb520313a9db2b" --cache=12288 --mine --unlock "0x6efc4688f0583b42da4d0aa4c4eb520313a9db2b" --allow-insecure-unlock --password /pool/pwd
+    screen -S server geth --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --cache=12288 --mine --unlock "0x6efc4688f0583b42da4d0aa4c4eb520313a9db2b" --allow-insecure-unlock --password /pool/pwd
 
 创建账户密码文件并给启动文件赋权限：
 
