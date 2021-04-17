@@ -15,18 +15,18 @@ module.exports = function (environment) {
 
         APP: {
             // API host and port
-            ApiUrl: '//192.168.0.200/',
+            ApiUrl: '//anh18.net/',
 
             // HTTP mining endpoint
-            HttpHost: '192.168.0.200',
+            HttpHost: 'eth.anh18.net',
             HttpPort: 40002,
 
             // Stratum mining endpoint
-            StratumHost: '192.168.0.200',
+            StratumHost: 'eth.anh18.net',
             StratumPort: 9009,
 
             // Stratum SSL mining endpoint
-            StratumHost1: '192.168.0.200',
+            StratumHost1: 'eth.anh18.net',
             StratumPort1: 8008,
 
             NicehashHost: '',
@@ -39,18 +39,18 @@ module.exports = function (environment) {
 
             //Current and Localization
             Currency: 'USD',
-            CoinName: 'Ethereum Classic',
-            CoinShortName: 'ETC',
+            CoinName: 'Ethereum',
+            CoinShortName: 'ETH',
             PaymentText: 'every hour',
             SupportMail: '',
             SupportHelpdesk: '',
-            WebsiteName: '192.168.0.200',
+            WebsiteName: 'anh18.net',
 
             //Coin Bases Settings
-            ChainAddress : 'https://etcblockexplorer.com/addr/',
-	        TransactionAddress : 'https://minergate.com/blockchain/etc/transaction/',
-            UncleAddress : 'https://minergate.com/blockchain/etc/block/',
-            BlockAddress : 'https://minergate.com/blockchain/etc/block/',
+            ChainAddress : 'https://blockchair.com/ethereum/blocks',
+	        TransactionAddress : '',
+            UncleAddress : '',
+            BlockAddress : '',
 
             //Twitter Parameter
             TwitterURL: '',
