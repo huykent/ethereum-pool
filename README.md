@@ -17,14 +17,19 @@
 
     sudo su
     mkdir /pool && cd /pool
-    wget https://github.com/multi-geth/multi-geth/releases/download/v1.9.7/multi-geth-linux.zip
+    wget https://github.com/multi-geth/multi-geth/releases/download/v1.9.21/multi-geth-linux.zip
     unzip multi-geth-linux.zip
     ln -s /pool/geth /usr/bin/geth
     chmod ugo+x /usr/bin/geth
 
+    ETH:
     geth account new
     geth account list
-
+    
+    ETC:
+    geth --classic account new
+    geth --classic account list
+    
 生成的账户信息如下:
 
 Public address of the key: 0xa9c96bff41FFAFb6bE8c2990c0CF4F3b220aaEaa
@@ -32,10 +37,18 @@ Path of the secret key file: /root/.ethereum/classic/keystore/UTC--2020-03-11T22
 
 创建启动脚本:
 
-    vim /pool/start_geth.sh
-
+    nano /pool/start_geth.sh
+    
+    ETH: 
+    
     #!/bin/bash
     screen -S server geth --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --cache=12288 --mine --unlock "0xc16f034c48970e3FCA22B2Ce99e00d4975A71a45" --allow-insecure-unlock --password /pool/pwd
+    
+    ETC:
+    
+    #!/bin/bash
+    screen -S server geth --classic --rpc --maxpeers 75 --syncmode "fast" --rpcapi "eth,net,web3,personal" --etherbase "YOUR_WALLET" --cache=12288 --mine --unlock "YOUR_WALLET" --allow-insecure-unlock --password /pool/pwd
+
 
 创建账户密码文件并给启动文件赋权限：
 
