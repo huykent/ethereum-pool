@@ -121,7 +121,7 @@
 
         "exchange": {
                 "enabled": false,
-                "url": "https://api.coinmarketcap.com/v1/ticker/ethereum-classic/?convert=USD",
+                "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum-classic",
                 "timeout": "50s",
                 "refreshInterval": "1800s"
         },
