@@ -120,7 +120,7 @@
         },
 
         "exchange": {
-                "enabled": false,
+                "enabled": true,
                 "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum-classic",
                 "timeout": "50s",
                 "refreshInterval": "1800s"
